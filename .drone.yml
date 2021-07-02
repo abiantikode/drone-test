@@ -1,0 +1,17 @@
+kind: pipeline
+type: ssh
+name: drone-test
+
+clone:
+  disable: true
+
+server:
+  host: 172.31.35.168
+  user: abi-test
+  password: password
+
+steps:
+- name: greeting
+  commands:
+  - echo halo
+  - mkdir test-drone
