@@ -13,6 +13,9 @@ server:
 steps:
 - name: greeting
   commands:
-  - echo halo
-  - cd /home/abi-test
-  - mkdir test-drone
+  - echo halo from release
+  when:
+    branch:
+    - release
+    event:
+      - push
