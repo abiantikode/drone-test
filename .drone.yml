@@ -6,13 +6,14 @@ clone:
   disable: true
 
 server:
-  host: 172.31.15.235
-  user: abi-test
-  password: password
+  host:
+    from_secret: myHost
+  user:
+    from_secret: myUser
+  password: 
+    from_secret: myPassword
 
 steps:
 - name: greeting
   commands:
-  - echo halo
-  - cd /home/abi-test
-  - mkdir test-drone
+  - echo halo from master
