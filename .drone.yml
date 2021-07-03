@@ -19,3 +19,11 @@ steps:
     - release
     event:
       - push
+- name: greeting 2
+  commands:
+  - echo halo from master
+  when:
+    branch:
+    - master
+    event:
+      - push
