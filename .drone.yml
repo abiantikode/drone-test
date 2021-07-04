@@ -34,19 +34,23 @@ steps:
     image_url: https://picsum.photos/id/180/256/256
     template: >
       {{#success build.status}}
-       Build: {{build.number}} 
+       Created: {{datetime build.created}}
+       Number: {{build.number}} 
        Project: {{repo.name}} 
        Branch: {{build.branch}}
-       Commit: {{build.commit}} 
+       Commit: {{build.commit}}
+       Event: {{build.event}} 
        Status: {{build.status}}
        Link: {{build.link}}
        Author: {{build.author}}
        Good Job :)
       {{else}}
-       Build: {{build.number}} 
+       Created: {{datetime build.created}}
+       Number: {{build.number}} 
        Project: {{repo.name}} 
-       Branch: {{build.branch}} 
-       Commit: {{build.commit}} 
+       Branch: {{build.branch}}
+       Commit: {{build.commit}}
+       Event: {{build.event}} 
        Status: {{build.status}}
        Link: {{build.link}}
        Author: {{build.author}}
