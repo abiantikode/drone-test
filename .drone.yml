@@ -31,11 +31,11 @@ steps:
     webhook: 
       from_secret: mySlackWebhookTest
     channel: devops-division
-    image_url: https://picsum.photos/id/18/256/256
+    image_url: https://picsum.photos/id/180/256/256
     template: >
       {{#success build.status}}
-        build {{build.number}} project {{repo.name}} branch {{build.branch}} succeeded. Good job.
+       {{build.created}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}} {{build.link}} succeeded. Good job.
       {{else}}
-        build {{build.number}} project {{repo.name}} branch {{build.branch}} failed. Fix me please.
+       {{build.created}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}} failed. Fix me please.
       {{/success}}
 
