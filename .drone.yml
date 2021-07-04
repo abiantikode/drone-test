@@ -17,7 +17,7 @@ steps:
 - name: greeting
   commands:
   - echo halo from master
-  - echo hai 
+  - echo hai dari master
 
 ---
 kind: pipeline
