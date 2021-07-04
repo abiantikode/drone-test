@@ -31,4 +31,10 @@ steps:
     webhook: 
       from_secret: mySlackWebhookTest
     channel: devops-division
+    template: >
+      {{#success build.status}}
+        build {{build.number}} succeeded. Good job.
+      {{else}}
+        build {{build.number}} failed. Fix me please.
+      {{/success}}
 
