@@ -31,6 +31,7 @@ steps:
     webhook: 
       from_secret: mySlackWebhookTest
     channel: devops-division
+    image_url: https://picsum.photos/id/18/256/256
     template: >
       {{#success build.status}}
         build {{build.number}} project {{repo.name}} branch {{build.branch}} succeeded. Good job.
