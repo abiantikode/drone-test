@@ -18,3 +18,17 @@ steps:
   commands:
   - echo halo from master
   - echo hai 
+
+---
+kind: pipeline
+type: docker
+name: notify-test
+
+steps:
+- name: notify
+  image: plugins/slack
+  settings:
+    webhook: 
+      from_secret: mySlackWebhookTest
+    channel: devops-division
+
