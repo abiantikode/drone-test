@@ -34,8 +34,12 @@ steps:
     image_url: https://picsum.photos/id/180/256/256
     template: >
       {{#success build.status}}
-       {{build.created}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}} {{build.link}} succeeded. Good job.
+       {{datetime build.started}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}}
+       {{build.link}}
+       Good Job
       {{else}}
-       {{build.created}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}} failed. Fix me please.
+       {{datetime build.started}} Build {{build.number}} Project {{repo.name}} Branch {{build.branch}} {{build.status}} 
+       {{build.link}}
+       Fix me please.
       {{/success}}
 
